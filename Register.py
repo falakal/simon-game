@@ -51,6 +51,7 @@ def Register_window():
     Label(root, text="Age:").place(x=20, y=100)
     Age = Entry(root, bd=5)
     Age.place(x=140, y=100)
-Register_window()
+
+    Register_window()
 Button(root,text="Register",command=Register,heigh=2,width=12,bd=3).place(x=30,y=200)
 root.mainloop()
