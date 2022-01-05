@@ -240,4 +240,3 @@ def top_three(self):
         avg3_in_top = Label(frame_top, text=avg_max3,
                             font=("times new roman", 20, "bold"),
                             bg="#CDC0B0", fg="#8B0000").place(x=350, y=230)
-

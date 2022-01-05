@@ -19,12 +19,19 @@ def menu(self):
     # $$$$$$$$$$$$$$$$$$$$$$$
     # @@@@@@@@@@@@@@@@@@@@@@@
     # back ground for the main menu
-    self.bg3 = ImageTk.PhotoImage(file="black.jpg")
-    bg3 = Label(self.root, image=self.bg3).place(x=0, y=0, relwidth=1, relheight=1)
+    if (self.change == 0):
+        self.bg3 = ImageTk.PhotoImage(file="black.jpg")
+        bg3 = Label(self.root, image=self.bg3).place(x=0, y=0, relwidth=1, relheight=1)
+    else:
+        self.bgchange = ImageTk.PhotoImage(file="img3.jpg")
+        bgchange = Label(self.root, image=self.bgchange).place(x=0, y=0, relwidth=1, relheight=1)
     # simon photo in the menu
     self.simon_icon = ImageTk.PhotoImage(file="sss.jpg")
     simon_icon = Label(self.root, image=self.simon_icon, bg="gray").place(x=500, y=20, width=172, height=112)
     # buttons at the main menu
+    # add the change off photo
+    btn_back_ground = Button(self.root, text="change background", font=("times new roman", 15, "bold"), bg="rosybrown",
+                             fg="darkred", width=15, cursor="hand2", command=self.background).place(x=50, y=33)
     btn1_menu = Button(self.root, text="New game", font=("times new roman", 15, "bold"), bg="limegreen", fg="black",
                        width=15, cursor="hand2", command=self.first).place(x=500, y=200)
     btn2_menu = Button(self.root, text="scores", font=("times new roman", 15, "bold"), bg="firebrick", fg="black", bd=0,
@@ -36,6 +43,14 @@ def menu(self):
     btn5_menu_inst = Button(self.root, text="Instructions", font=("times new roman", 15, "bold"), bg="rosybrown",
                             fg="darkred",
                             width=13, cursor="hand2", command=self.instructions).place(x=1000, y=33)
+
+
+def background(self):
+    if (self.change == 0):
+        self.change = 1
+    else:
+        self.change = 0
+    self.menu()
 
 
 def exit(self):
